@@ -1,5 +1,4 @@
-# Project Name:Rent-A-Ride<br/>
-URL For the App: http://ec2-18-223-32-243.us-east-2.compute.amazonaws.com:8080/RentARide-Merge/ <br/>
+
 
 # Main Features:<br /> 
 As a Manager of Rent-A-Ride, the user can:<br /> 
@@ -25,15 +24,9 @@ If the customer ends his trip after the drop off time, a late fee will be added 
 
 
 # Techical Specifications:<br /> 
-We have used MYSQL database and built a J2EE app using JSP and Servlets.<br /> 
+Used MYSQL database and built a J2EE app using JSP and Servlets.<br /> 
 The app runs on Apache Tomcat 9 Server.<br /> 
-We have deployed the MYSQL Database to an AWS RDS Instance and we are deploying the application to an EC2 instance and from the code we are connecting to the RDS instance. This makes the app globally accessible. EC2 instance has been load balanced and auto scaled for scalability and elasticity.<br /> 
-Link to the Component Diagram - https://github.com/gopinathsjsu/sp20-cmpe-202-sec-49-team-project-teamspartans/blob/master/Component%20Diagram.png <br/>
-
-# Documentation:<br/>
-We have maintained a GIT Project Board accessible at : https://github.com/users/prar1612/projects/1  <br/>
-Every week, we had a SCRUM call and we have weekly sprint updates in the Sprint Overview Document along with Burn down charts for each week - Accessible at  - https://github.com/gopinathsjsu/sp20-cmpe-202-sec-49-team-project-teamspartans/blob/master/Sprint%20Overview.xlsx <br/>
-Wireframes created in the design phase have been uploaded at - https://github.com/gopinathsjsu/sp20-cmpe-202-sec-49-team-project-teamspartans/tree/master/Wireframes <br/>
+We have deployed the MYSQL Database to an AWS RDS Instance and we are deploying the application to an EC2 instance and from the code we are connecting to the RDS instance. This makes the app globally accessible. EC2 instance has been load balanced and auto scaled for scalability and elasticity.<br />
 
 
 
