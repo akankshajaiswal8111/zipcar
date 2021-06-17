@@ -1,0 +1,90 @@
+CREATE DATABASE `rentaride`;
+Use rentaride;
+CREATE TABLE `admindetails` (
+  `Username` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `EmailId` varchar(255) NOT NULL,
+  `PhoneNum` varchar(255) NOT NULL,
+  `Role` varchar(255) NOT NULL,
+  `Address` varchar(255) NOT NULL,
+  PRIMARY KEY (`Username`)
+);
+
+CREATE TABLE `customerdetails` (
+  `Username` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `EmailId` varchar(255) NOT NULL,
+  `LicenseNumber` varchar(255) NOT NULL,
+  `LicenseState` varchar(255) NOT NULL,
+  `ResidentialAddress` varchar(255) NOT NULL,
+  `CVV` int NOT NULL,
+  `ExpiryDate` varchar(255) NOT NULL,
+  `PhoneNum` varchar(255) NOT NULL,
+  `CreditCardNumber` varchar(255) NOT NULL,
+  `CardType` varchar(255) NOT NULL,
+  `isActive` tinyint(1) NOT NULL,
+  PRIMARY KEY (`Username`)
+);
+
+CREATE TABLE `fees` (
+  `FeeType` varchar(255) NOT NULL,
+  `Amount` int NOT NULL,
+  PRIMARY KEY (`FeeType`)
+);
+
+CREATE TABLE `rentlocations` (
+  `RentLocationId` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) NOT NULL,
+  `Address` varchar(255) NOT NULL,
+  `VehicleCapacity` int NOT NULL,
+  `AvailableCapacity` int NOT NULL,
+  PRIMARY KEY (`RentLocationId`),
+  UNIQUE KEY `Name` (`Name`,`Address`),
+  UNIQUE KEY `Address` (`Address`)
+);
+
+CREATE TABLE `vehicletype` (
+  `VehicleTypeId` int NOT NULL AUTO_INCREMENT,
+  `Type` varchar(255) NOT NULL,
+  `PricePerHr` int NOT NULL,
+  `Description` varchar(255) NOT NULL,
+  PRIMARY KEY (`VehicleTypeId`)
+);
+
+CREATE TABLE `vehicles` (
+  `RegNo` varchar(255) NOT NULL,
+  `Type` int NOT NULL,
+  `Location` int NOT NULL,
+  `Make` varchar(255) NOT NULL,
+  `ModelNo` varchar(255) NOT NULL,
+  `Mileage` int NOT NULL,
+  `LastServiceDate` date NOT NULL,
+  `Year` year NOT NULL,
+  `Quality` varchar(100) NOT NULL,
+  PRIMARY KEY (`RegNo`),
+  KEY `Type` (`Type`),
+  KEY `Location` (`Location`),
+  CONSTRAINT `vehicles_ibfk_1` FOREIGN KEY (`Type`) REFERENCES `vehicletype` (`VehicleTypeId`),
+  CONSTRAINT `vehicles_ibfk_2` FOREIGN KEY (`Location`) REFERENCES `rentlocations` (`RentLocationId`)
+);
+
+CREATE TABLE `reservation` (
+  `ReservationId` int NOT NULL AUTO_INCREMENT,
+  `Customer` varchar(255) NOT NULL,
+  `Vehicle` varchar(255) NOT NULL,
+  `VehicleType` int NOT NULL,
+  `PickUpDateTime` datetime NOT NULL,
+  `DropOffDateTime` datetime NOT NULL,
+  `booked` tinyint(1) NOT NULL,
+  `FeesPayable` int NOT NULL,
+  `comments` varchar(8000) DEFAULT NULL,
+  PRIMARY KEY (`ReservationId`),
+  KEY `Customer` (`Customer`),
+  KEY `Vehicle` (`Vehicle`),
+  KEY `VehicleType` (`VehicleType`),
+  CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`Customer`) REFERENCES `customerdetails` (`Username`),
+  CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`Vehicle`) REFERENCES `vehicles` (`RegNo`),
+  CONSTRAINT `reservation_ibfk_3` FOREIGN KEY (`VehicleType`) REFERENCES `vehicletype` (`VehicleTypeId`)
+);
