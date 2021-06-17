@@ -1,10 +1,4 @@
-# sp20-cmpe-202-sec-49-team-project-teamspartans
 # Project Name:Rent-A-Ride<br/>
-Team Members: Akanksha Jaiswal (014154049)<br/>
-Manasi Sadanand Pai (014577251)<br/>
-Prarthana Hemanth (014533064) <br/>
-Rimzim Thube (014555021)<br/>
-
 URL For the App: http://ec2-18-223-32-243.us-east-2.compute.amazonaws.com:8080/RentARide-Merge/ <br/>
 
 # Main Features:<br /> 
@@ -41,11 +35,6 @@ We have maintained a GIT Project Board accessible at : https://github.com/users/
 Every week, we had a SCRUM call and we have weekly sprint updates in the Sprint Overview Document along with Burn down charts for each week - Accessible at  - https://github.com/gopinathsjsu/sp20-cmpe-202-sec-49-team-project-teamspartans/blob/master/Sprint%20Overview.xlsx <br/>
 Wireframes created in the design phase have been uploaded at - https://github.com/gopinathsjsu/sp20-cmpe-202-sec-49-team-project-teamspartans/tree/master/Wireframes <br/>
 
-# Individual Contribution:<br/>
-Akanksha: Worked on the Admin module of creating and updating vehicles, vehicle types and  rental locations.<br/>
-Prarthana : Worked on admin and customer sign up. Also fees and charges and customer termination.<br/>
-Manasi: Worked on creating/editing reservations.<br/>
-Rimzim: Worked on searching for vehicles functionality.<br/>
 
 
 
